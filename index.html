@@ -1,0 +1,343 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <label class="theme-switch">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+    </label>
+
+    <div class="container">
+        <h1 id="date"></h1>
+        <div class="ConfirmedDiv">
+            <p class="confirmedP">Confirmed:</p>
+            <div id="Confirmed"></div>
+        </div>
+        <div class="ActiveDiv">
+            <p class="activeP">Active:</p>
+            <div id="Active"></div>
+        </div>
+        <div class="RecoveredDiv">
+            <p class="recoveredP">Recovered:</p>
+            <div id="Recovered"></div>
+        </div>
+        <div class="DeathsDiv">
+            <p class="deathsP">Deaths:</p>
+            <div id="Deaths"></div>
+        </div>
+    </div>
+
+</body>
+
+<style>
+    :root {
+        --background: rgb(238, 238, 238);
+        --switch: black;
+    }
+
+    [data-theme="dark"] {
+        --background: rgb(19, 19, 19);
+        --switch: white;
+    }
+
+    *{
+        background-color: var(--background);
+        transition: all 0.2s ease-out;
+    }
+
+    .body {
+        overflow: hidden;
+    }
+
+    .container {
+        position: absolute;
+        top: 30%;
+        height: 220px;
+        width: 80%;
+        left: 10%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    #date {
+        position: absolute;
+        text-align: center;
+        top: -65%;
+        text-decoration: underline;
+        font-family: Circular;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        color: var(--switch);
+        background-color: none;
+        padding: 17px 40px;
+        border-radius: 12px;
+    }
+
+    #date:hover {
+        box-shadow: 0 3px 15px rgba(100, 100, 100, 0.123);
+    }
+
+    .ConfirmedDiv {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 150px;
+    }
+
+    #Confirmed {
+        position: relative;
+        bottom: 0;
+        font-family: Circular;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 100px;
+        color: #fc4e4e;
+        background-color: #fcb8b8;
+        height: 100px;
+        width: 300px;
+        border-radius: 15px;
+    }
+
+    #Confirmed:hover {
+        box-shadow: 0 3px 15px rgba(100, 100, 100, 0.123);
+        transform: scale(1.01);
+    }
+
+    .confirmedP {
+        font-family: Circular;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        color: #fc4e4e;
+        pointer-events: none;
+    }
+
+    .DeathsDiv {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 150px;
+    }
+
+    #Deaths {
+        font-family: Circular;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 100px;
+        color: #2b2b2b;
+        background-color: #8c8c8c;
+        height: 100px;
+        width: 300px;
+        border-radius: 15px;
+    }
+
+    #Deaths:hover {
+        box-shadow: 0 3px 15px rgba(100, 100, 100, 0.123);
+        transform: scale(1.01);
+    }
+
+    .deathsP {
+        font-family: Circular;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        color: var(--switch);
+        pointer-events: none;
+    }
+
+    .RecoveredDiv {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 150px;
+    }
+
+    #Recovered {
+        font-family: Circular;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 100px;
+        color: #27b859;
+        background-color: #b5facd;
+        height: 100px;
+        width: 300px;
+        border-radius: 15px;
+    }
+
+    #Recovered:hover {
+        box-shadow: 0 3px 15px rgba(100, 100, 100, 0.123);
+        transform: scale(1.01);
+    }
+
+    .recoveredP {
+        font-family: Circular;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        color: #27b859;
+        pointer-events: none;
+    }
+
+    .ActiveDiv {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 150px;
+    }
+
+    #Active {
+        font-family: Circular;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 100px;
+        color: #f0b300;
+        background-color: #ffdd78;
+        height: 100px;
+        width: 300px;
+        border-radius: 15px;
+    }
+
+    #Active:hover {
+        box-shadow: 0 3px 15px rgba(100, 100, 100, 0.123);
+        transform: scale(1.01);
+    }
+
+    .activeP {
+        font-family: Circular;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        color: #f0b300;
+        pointer-events: none;
+    }
+
+    .theme-switch {
+        position: fixed;
+        display: inline;
+        position: absolute;
+        bottom: 2%;
+        left: 2%;
+        padding-left: 30px;
+        padding-bottom: 22px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .theme-switch input {
+        position: fixed;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .checkmark {
+        position: fixed;
+        bottom: 3%;
+        left: 2%;
+        height: 20px;
+        width: 20px;
+        border-radius: 20px;
+        background-color: var(--switch);
+        transition: all 0.25s ease-out;
+    }
+
+
+    .theme-switch input:checked~.checkmark {
+        background-color: var(--switch);
+        transition: all 0.25s ease-out;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+        transition: all 0.25s ease-out;
+    }
+
+    .theme-switch input:checked~.checkmark:after {
+        display: block;
+        transition: all 0.25s ease-out;
+    }
+
+</style>
+
+<script>
+
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+        else {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
+
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        }
+        else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        if (currentTheme === 'dark') {
+            toggleSwitch.checked = true;
+        }
+    }
+
+</script>
+
+<script>
+
+    const staticUrl = 'https://covid2019-api.herokuapp.com/v2/total'
+
+    $.getJSON(staticUrl, function (data) {
+        $("#Confirmed").text(new Intl.NumberFormat().format(data.data.confirmed));
+        $("#Deaths").text(new Intl.NumberFormat().format(data.data.deaths))
+        $("#Recovered").text(new Intl.NumberFormat().format(data.data.recovered))
+        $("#Active").text(new Intl.NumberFormat().format(data.data.active))
+        $("#date").text(data.dt)
+    });
+
+</script>
+
+</html>
