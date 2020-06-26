@@ -31,26 +31,81 @@
         </div>
     </div>
 
+    <div id="grid-container" class="grid-container">
+        <div class="grid-item">Country</div>
+        <div class="grid-item">Confirmed</div>
+        <div class="grid-item">Active</div>
+        <div class="grid-item">Recovered</div>
+        <div class="grid-item">Deaths</div>
+    </div>
 </body>
 
 <style>
     :root {
         --background: rgb(238, 238, 238);
         --switch: black;
+        --gridTopRow: #c4c4c4;
+        --gridLeftColumn: #c4c4c4;
+        --gridTopLeft: #8c8c8c9c;
+        --grid: #e6e6e6;
     }
 
     [data-theme="dark"] {
         --background: rgb(19, 19, 19);
         --switch: white;
+        --gridTopRow: #535353;
+        --gridLeftColumn: #535353;
+        --gridTopLeft: #8c8c8c9c;
+        --grid: #292929;;
     }
 
-    *{
-        background-color: var(--background);
+    * {
         transition: all 0.2s ease-out;
     }
 
-    .body {
-        overflow: hidden;
+    body {
+        background-color: var(--background);
+    }
+
+    .grid-container {
+        position: absolute;
+        width: 70%;
+        height: 100%;
+        right: 15%;
+        top: 80%;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        background-color: none;
+        padding: 10px;
+    }
+
+    .grid-item {
+        background-color: var(--grid);
+        border: 1px solid rgba(0, 0, 0, 0.048);
+        padding: 20px;
+        font-size: 24px;
+        color: var(--switch);
+        text-align: center;
+        font-family: Circular;
+        font-weight: medium;
+    }
+
+    .grid-item:nth-child(1) {
+        background-color: var(--gridTopLeft);
+        border-radius: 13px 0 0 0;
+    }
+    .grid-item:nth-child(2) {
+        background-color: var(--gridTopRow);
+    }
+    .grid-item:nth-child(3) {
+        background-color: var(--gridTopRow);
+    }
+    .grid-item:nth-child(4) {
+        background-color: var(--gridTopRow);
+    }
+    .grid-item:nth-child(5) {
+        background-color: var(--gridTopRow);
+        border-radius: 0 13px 0 0;
     }
 
     .container {
@@ -285,7 +340,6 @@
         display: block;
         transition: all 0.25s ease-out;
     }
-
 </style>
 
 <script>
@@ -337,6 +391,19 @@
         $("#Active").text(new Intl.NumberFormat().format(data.data.active))
         $("#date").text(data.dt)
     });
+
+    $.getJSON("https://covid2019-api.herokuapp.com/v2/current", function (data2) {
+        var i;
+        for (i = 0; i <= data2.data.length; i++) {
+        $("#grid-container").append(`<div class="grid-item" style ="font-family: CircularBold; background-color: var(--gridLeftColumn)">${(data2.data[i].location)}</div>`);
+        $("#grid-container").append(`<div class="grid-item">${new Intl.NumberFormat().format(data2.data[i].confirmed)}</div>`);
+        $("#grid-container").append(`<div class="grid-item">${new Intl.NumberFormat().format(data2.data[i].active)}</div>`);
+        $("#grid-container").append(`<div class="grid-item">${new Intl.NumberFormat().format(data2.data[i].recovered)}</div>`);
+        $("#grid-container").append(`<div class="grid-item">${new Intl.NumberFormat().format(data2.data[i].deaths)}</div>`);
+        }
+    });
+
+    
 
 </script>
 
