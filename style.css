@@ -1,0 +1,339 @@
+  :root {
+        --background: rgb(19, 19, 19);
+        --switch: white;
+        --gridTopRow: #535353;
+        --gridLeftColumn: #535353;
+        --gridTopLeft: #8c8c8c9c;
+        --grid: #292929;
+    }
+
+    [data-theme="dark"] {
+        --background: rgb(238, 238, 238);
+        --switch: black;
+        --gridTopRow: #c4c4c4;
+        --gridLeftColumn: #c4c4c4;
+        --gridTopLeft: #8c8c8c9c;
+        --grid: #e6e6e6;
+    }
+
+    @font-face {
+        font-family: 'Circular';
+        src: url("https://dnvie.github.io/Assets/Circular%20Book.ttf");
+        font-style: normal;
+        font-weight: medium;
+    }
+
+    @font-face {
+        font-family: 'CircularBold';
+        src: url("https://dnvie.github.io/Assets/Circular%20Bold.ttf");
+        font-style: normal;
+        font-weight: bold;
+    }
+
+
+    * {
+        transition: all 0.2s ease-out;
+    }
+
+    body {
+        background-color: var(--background);
+    }
+
+    .logo {
+        position: absolute;
+        top: -45.5%;
+        width: 8%;
+        left: 46%;
+        filter: grayscale(100%);
+        opacity: 70%;
+    }
+
+    .githubLogo {
+    position: fixed;
+    height: 3%;
+    width: 3%;
+    top: 3%;
+    right: 3%;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .gitSVG {
+    transition: all 0.2s ease-in-out;
+    opacity: 12%;
+  }
+
+  .githubLogo:hover .gitSVG {
+    opacity: 35%;
+    transition: all 0.2s ease-in-out;
+  }
+
+
+    .grid-container {
+        position: absolute;
+        width: 70%;
+        height: 100%;
+        right: 15%;
+        top: 57%;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        background-color: none;
+        padding: 10px;
+        transform: scale(0.84);
+    }
+
+    .grid-item {
+        background-color: var(--grid);
+        border: 1px solid rgba(0, 0, 0, 0.048);
+        padding: 20px;
+        font-size: 24px;
+        color: var(--switch);
+        text-align: center;
+        font-family: Circular;
+        font-weight: medium;
+    }
+
+    .grid-item:nth-child(1) {
+        background-color: var(--gridTopLeft);
+        border-radius: 13px 0 0 0;
+        font-family: CircularBold;
+    }
+    .grid-item:nth-child(2) {
+        background-color: var(--gridTopRow);
+        font-family: CircularBold;
+        color: #fc4e4e;
+    }
+    .grid-item:nth-child(3) {
+        background-color: var(--gridTopRow);
+        font-family: CircularBold;
+        color: #f0b300;
+    }
+    .grid-item:nth-child(4) {
+        background-color: var(--gridTopRow);
+        font-family: CircularBold;
+        color: #27b859;
+    }
+    .grid-item:nth-child(5) {
+        background-color: var(--gridTopRow);
+        font-family: CircularBold;
+        border-radius: 0 13px 0 0;
+        color: #000000;
+    }
+
+    .container {
+        position: absolute;
+        top: 18%;
+        height: 220px;
+        width: 80%;
+        left: 10%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        transform: scale(0.75);
+    }
+
+    #date:hover {
+        box-shadow: 0 3px 15px rgba(100, 100, 100, 0.123);
+    }
+
+    .ConfirmedDiv {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 150px;
+    }
+
+    #Confirmed {
+        position: relative;
+        bottom: 0;
+        font-family: CircularBold;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 100px;
+        color: #fc4e4e;
+        background-color: #fcb8b8;
+        height: 100px;
+        width: 300px;
+        border-radius: 15px;
+    }
+
+    #Confirmed:hover {
+        box-shadow: 0 3px 15px rgba(100, 100, 100, 0.123);
+        transform: scale(1.01);
+    }
+
+    .confirmedP {
+        font-family: CircularBold;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        color: #fc4e4e;
+        pointer-events: none;
+    }
+
+    .DeathsDiv {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 150px;
+    }
+
+    #Deaths {
+        font-family: CircularBold;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 100px;
+        color: #2b2b2b;
+        background-color: #8c8c8c;
+        height: 100px;
+        width: 300px;
+        border-radius: 15px;
+    }
+
+    #Deaths:hover {
+        box-shadow: 0 3px 15px rgba(100, 100, 100, 0.123);
+        transform: scale(1.01);
+    }
+
+    .deathsP {
+        font-family: CircularBold;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        color: var(--switch);
+        pointer-events: none;
+    }
+
+    .RecoveredDiv {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 150px;
+    }
+
+    #Recovered {
+        font-family: CircularBold;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 100px;
+        color: #27b859;
+        background-color: #b5facd;
+        height: 100px;
+        width: 300px;
+        border-radius: 15px;
+    }
+
+    #Recovered:hover {
+        box-shadow: 0 3px 15px rgba(100, 100, 100, 0.123);
+        transform: scale(1.01);
+    }
+
+    .recoveredP {
+        font-family: CircularBold;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        color: #27b859;
+        pointer-events: none;
+    }
+
+    .ActiveDiv {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 150px;
+    }
+
+    #Active {
+        font-family: CircularBold;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 100px;
+        color: #f0b300;
+        background-color: #ffdd78;
+        height: 100px;
+        width: 300px;
+        border-radius: 15px;
+    }
+
+    #Active:hover {
+        box-shadow: 0 3px 15px rgba(100, 100, 100, 0.123);
+        transform: scale(1.01);
+    }
+
+    .activeP {
+        font-family: CircularBold;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        color: #f0b300;
+        pointer-events: none;
+    }
+
+    .theme-switch {
+        position: fixed;
+        display: inline;
+        position: absolute;
+        bottom: 2%;
+        left: 2%;
+        padding-left: 30px;
+        padding-bottom: 22px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .theme-switch input {
+        position: fixed;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .checkmark {
+        position: fixed;
+        bottom: 3%;
+        left: 2%;
+        height: 20px;
+        width: 20px;
+        border-radius: 20px;
+        background-color: var(--switch);
+        transition: all 0.25s ease-out;
+    }
+
+
+    .theme-switch input:checked~.checkmark {
+        background-color: var(--switch);
+        transition: all 0.25s ease-out;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+        transition: all 0.25s ease-out;
+    }
+
+    .theme-switch input:checked~.checkmark:after {
+        display: block;
+        transition: all 0.25s ease-out;
+    }
