@@ -57,6 +57,20 @@
     transition: all 0.2s ease-in-out;
   }
 
+.logo {
+        position: absolute;
+        width: 100px;
+        align-items: left;
+        text-align: left;
+        align-content: left;
+        align-self: left;
+        height: 25%;
+        bottom: 40px;
+        left: 35px;
+        opacity: 50%;
+        z-index: 10;
+    }
+
   .gitSVG {
     transition: all 0.2s ease-in-out;
     opacity: 12%;
