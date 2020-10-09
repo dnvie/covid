@@ -65,10 +65,11 @@
         align-content: left;
         align-self: left;
         height: 16%;
-        top: 30px;
+        top: 11px;
         left: 35px;
         opacity: 50%;
         z-index: 10;
+  transform: scale(0.4);
     }
 
   .gitSVG {
