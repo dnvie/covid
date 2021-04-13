@@ -49,7 +49,7 @@ const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"
     $.getJSON("https://covid2019-api.herokuapp.com/v2/current", function (data2) {
         var i;
         for (i = 0; i <= data2.data.length; i++) {
-        $("#grid-container").append(`<div class="grid-item" style ="font-family: CircularBold; background-color: var(--gridLeftColumn)">${(data2.data[i].location)}</div>`);
+        $("#grid-container").append(`<div class="grid-item" style ="font-family: Circular; background-color: var(--gridLeftColumn)">${(data2.data[i].location)}</div>`);
         $("#grid-container").append(`<div class="grid-item">${new Intl.NumberFormat().format(data2.data[i].confirmed)}</div>`);
         $("#grid-container").append(`<div class="grid-item">${new Intl.NumberFormat().format(data2.data[i].active)}</div>`);
         $("#grid-container").append(`<div class="grid-item">${new Intl.NumberFormat().format(data2.data[i].recovered)}</div>`);
