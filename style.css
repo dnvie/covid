@@ -110,26 +110,26 @@
     .grid-item:nth-child(1) {
         background-color: var(--gridTopLeft);
         border-radius: 13px 0 0 0;
-        font-family: CircularBold;
+        font-family: Circular;
     }
     .grid-item:nth-child(2) {
         background-color: var(--gridTopRow);
-        font-family: CircularBold;
+        font-family: Circular;
         color: #fc4e4e;
     }
     .grid-item:nth-child(3) {
         background-color: var(--gridTopRow);
-        font-family: CircularBold;
+        font-family: Circular;
         color: #f0b300;
     }
     .grid-item:nth-child(4) {
         background-color: var(--gridTopRow);
-        font-family: CircularBold;
+        font-family: Circular;
         color: #27b859;
     }
     .grid-item:nth-child(5) {
         background-color: var(--gridTopRow);
-        font-family: CircularBold;
+        font-family: Circular;
         border-radius: 0 13px 0 0;
         color: #000000;
     }
@@ -163,7 +163,7 @@
     #Confirmed {
         position: relative;
         bottom: 0;
-        font-family: CircularBold;
+        font-family: Circular;
         font-size: 40px;
         font-weight: bold;
         text-align: center;
@@ -182,7 +182,7 @@
     }
 
     .confirmedP {
-        font-family: CircularBold;
+        font-family: Circular;
         font-size: 40px;
         font-weight: bold;
         text-align: center;
@@ -200,7 +200,7 @@
     }
 
     #Deaths {
-        font-family: CircularBold;
+        font-family: Circular;
         font-size: 40px;
         font-weight: bold;
         text-align: center;
@@ -219,7 +219,7 @@
     }
 
     .deathsP {
-        font-family: CircularBold;
+        font-family: Circular;
         font-size: 40px;
         font-weight: bold;
         text-align: center;
@@ -237,7 +237,7 @@
     }
 
     #Recovered {
-        font-family: CircularBold;
+        font-family: Circular;
         font-size: 40px;
         font-weight: bold;
         text-align: center;
@@ -256,7 +256,7 @@
     }
 
     .recoveredP {
-        font-family: CircularBold;
+        font-family: Circular;
         font-size: 40px;
         font-weight: bold;
         text-align: center;
@@ -274,7 +274,7 @@
     }
 
     #Active {
-        font-family: CircularBold;
+        font-family: Circular;
         font-size: 40px;
         font-weight: bold;
         text-align: center;
@@ -293,7 +293,7 @@
     }
 
     .activeP {
-        font-family: CircularBold;
+        font-family: Circular;
         font-size: 40px;
         font-weight: bold;
         text-align: center;
