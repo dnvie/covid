@@ -18,14 +18,14 @@
 
     @font-face {
         font-family: 'Circular';
-        src: url("https://github.com/dnvie/dnvie.github.io/blob/master/Assets/Circular%20Book.ttf");
+        src: url("/Assets/Circular%20Book.ttf");
         font-style: normal;
         font-weight: medium;
     }
 
     @font-face {
         font-family: 'CircularBold';
-        src: url("https://github.com/dnvie/dnvie.github.io/blob/master/Assets/Circular%20Bold.ttf");
+        src: url("/Assets/Circular%20Bold.ttf");
         font-style: normal;
         font-weight: bold;
     }
